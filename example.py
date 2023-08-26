@@ -14,7 +14,7 @@ class YourClass(TokenTrack):
             # any langchain function to be calculated
             results = LLMChain(
                 llm=ChatOpenAI(), 
-                prompt=ChatPromptTemplate.from_template("What's the capitol of {country}?"),
+                prompt=ChatPromptTemplate.from_template("What's the capitol of {country}? List 20 top attractions there"),
                 verbose=True
             ).run("France")
             print(results)
