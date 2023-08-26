@@ -4,16 +4,9 @@
   - Displays it to you when your program exits
   - Can be logged to textfile otherwise
 
-# Example output when called
-```
-Total tokens: 7919
-Prompt tokens: 7448
-Completion tokens: 471
-Total cost: 0.024228
-```
 
 # Example usage
-```
+```python
 from src.track_usage import TokenTrack
 from langchain.callbacks import get_openai_callback
 
@@ -30,7 +23,7 @@ class YourClass(TokenTrack):
             # any langchain function to be calculated
             results = LLMChain(
                 llm=ChatOpenAI(), 
-                prompt=ChatPromptTemplate.from_template("What's the capitol of {country}?"),
+                prompt=ChatPromptTemplate.from_template("What's the capitol of {country}? List 20 top attractions there"),
                 verbose=True
             ).run("France")
             print(results)
@@ -43,4 +36,16 @@ class YourClass(TokenTrack):
 if __name__ == "__main__":
     yourclass = YourClass()
     yourclass.your_function()
+```
+Output:
+```
+> Finished chain.
+The capital of France is Paris. Here are 20 top attractions in
+... lengthy response ...
+These are just a few of the many attractions Paris has to offer!
+
+Total tokens: 216
+Prompt tokens: 21
+Completion tokens: 195
+Total cost: 0.00042150000000000005
 ```
