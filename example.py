@@ -1,19 +1,3 @@
-# track-token-usage
-# Track langchain / OpenAI token usage minimalistically.
-  - Sums up the token costs for any OpenAI model in all your langchain calls wrapped in get_openai_callback()
-  - Displays it to you when your program exits
-  - Can be logged to textfile otherwise
-
-# Example output when called
-```
-Total tokens: 7919
-Prompt tokens: 7448
-Completion tokens: 471
-Total cost: 0.024228
-```
-
-# Example usage
-```
 from src.track_usage import TokenTrack
 from langchain.callbacks import get_openai_callback
 
@@ -43,4 +27,3 @@ class YourClass(TokenTrack):
 if __name__ == "__main__":
     yourclass = YourClass()
     yourclass.your_function()
-```
