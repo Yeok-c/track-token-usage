@@ -13,7 +13,7 @@ Total cost: 0.024228
 ```
 
 # Example usage
-```
+```python
 from src.track_usage import TokenTrack
 from langchain.callbacks import get_openai_callback
 
